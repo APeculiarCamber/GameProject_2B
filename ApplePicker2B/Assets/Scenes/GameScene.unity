@@ -236,10 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyIncrFrequency: 4
-  spawnDecrease: 0.5
-  spawnDecreaseDelta: 0.2
+  spawnDecrease: 1
+  spawnDecreaseDelta: 0.25
   maxSpawnDecrease: 5.5
-  enemySpeed: 0.5
+  enemySpeed: 0.7
   enemySpeedDelta: 0.14
   maxEnemySpeed: 4
   enemy: {fileID: 3685305092088631806, guid: e1abc8a9e4a327f4289ca3de73adc17f, type: 3}

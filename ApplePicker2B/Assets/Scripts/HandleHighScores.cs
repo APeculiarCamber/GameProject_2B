@@ -46,7 +46,7 @@ public class HandleHighScores : MonoBehaviour
             int pos;
             for (pos = 10; pos > 0; pos--)
             {
-                if (newScore < PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 20))
+                if (newScore < PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 100))
                 {
                     pos++;
                     break;
@@ -55,7 +55,7 @@ public class HandleHighScores : MonoBehaviour
             pos = pos == 0 ? 1 : pos;
 
             //change high scores
-            int lastScore = PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 20);
+            int lastScore = PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 100);
             string lastName = PlayerPrefs.GetString("Name" + pos.ToString(), "TMP");
             PlayerPrefs.SetInt("HighScore" + pos.ToString(), newScore);
             PlayerPrefs.SetString("Name" + pos.ToString(), newName);
@@ -63,7 +63,7 @@ public class HandleHighScores : MonoBehaviour
 
             while (pos != 11)  //shift all scores below the new score down
             {
-                int nextScore = PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 20);
+                int nextScore = PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 100);
                 string nextName = PlayerPrefs.GetString("Name" + pos.ToString(), "TMP");
                 PlayerPrefs.SetInt("HighScore" + pos.ToString(), lastScore);
                 PlayerPrefs.SetString("Name" + pos.ToString(), lastName);
@@ -83,7 +83,7 @@ public class HandleHighScores : MonoBehaviour
             highScores += i.ToString() + ")  ";
             highScores += PlayerPrefs.GetString("Name" + i.ToString(), "TMP");
             highScores += "   ";
-            highScores += PlayerPrefs.GetInt("HighScore" + i.ToString(), (10 - i) * 20);
+            highScores += PlayerPrefs.GetInt("HighScore" + i.ToString(), (10 - i) * 100);
             highScores += "\n";
         }
         hsText.text = highScores;

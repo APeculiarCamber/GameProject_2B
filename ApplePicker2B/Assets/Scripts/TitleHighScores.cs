@@ -15,7 +15,7 @@ public class TitleHighScores : MonoBehaviour
         {
             highScores.text += i.ToString() + ")  ";
             highScores.text += PlayerPrefs.GetString("Name" + i.ToString(), "TMP") + "    ";
-            highScores.text += PlayerPrefs.GetInt("HighScore" + i.ToString(), (10 - i) * 20);
+            highScores.text += PlayerPrefs.GetInt("HighScore" + i.ToString(), (10 - i) * 100);
             highScores.text += "\n";
         }
     }
