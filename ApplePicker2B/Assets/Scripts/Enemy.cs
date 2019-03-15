@@ -8,8 +8,11 @@ public class Enemy : MonoBehaviour
     //full across then back (two bombs), v attack (no bomb),
     public enum EnemyType { Half, OneFull, TwoFull, VAttack };
 
+    [Header("BOMB")]
     [SerializeField]
     GameObject bomb;
+    [Space]
+    [Header("Death Explosion")]
     [SerializeField]
     GameObject deathExplosion;
 

@@ -9,7 +9,7 @@ public class Drop : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (SettingsMenu.settingsOn)
+        if (SettingsMenu.settingsOn)   //static singleton
             return;
 
         transform.Translate(new Vector3(0, -speed * Time.fixedDeltaTime, 0)); //move down

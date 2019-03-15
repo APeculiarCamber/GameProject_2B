@@ -140,10 +140,12 @@ public class EnemySpawner : MonoBehaviour
         timer += Time.deltaTime;
     }
 
+
     public void freeLane(int freedLaneIndex)
     {
         activeLanes[freedLaneIndex] = true;
     }
+
 
     int getActiveLane()  
     {

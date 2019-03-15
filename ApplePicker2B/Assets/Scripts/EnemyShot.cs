@@ -29,9 +29,10 @@ public class EnemyShot : MonoBehaviour
         speed = s;
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Picker" || other.gameObject.tag == "PlayerShot")
+        if (other.gameObject.tag == "Picker" || other.gameObject.tag == "PlayerShot")  //if the bomb hits picker or shot, destroy it
         {
             Destroy(gameObject);
             Instantiate(deathExplosion, transform.position, Quaternion.identity);

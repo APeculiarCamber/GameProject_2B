@@ -9,8 +9,9 @@ public class Dropper : MonoBehaviour
     AudioSource hitSound;
 
     [SerializeField]
-    GameObject apple;
+    GameObject powerPellet;
     
+    [Header("UFO Movement")]
     [Space]
     [SerializeField]
     float speed = 0;
@@ -92,7 +93,7 @@ public class Dropper : MonoBehaviour
 
     void Drop()
     {
-        Drop d = Instantiate(apple, transform.position, Quaternion.identity).GetComponent<Drop>();
+        Drop d = Instantiate(powerPellet, transform.position, Quaternion.identity).GetComponent<Drop>();
         d.setSpeed(Random.Range(dropSpeed - 0.5f, dropSpeed + 0.5f)); //set d's drop speed
     }
 
