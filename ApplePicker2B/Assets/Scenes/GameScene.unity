@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74f18d426f8f8d42ad8557ecbfd4dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apple: {fileID: 6314946958858063744, guid: 5385ebce249e40d45a466d7acfdca2b1, type: 3}
+  powerPellet: {fileID: 0}
   speed: 6
   turnChance: 0.015
   rateChangeFrequency: 5
@@ -1815,7 +1815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameIsStarted: 0
   gameOver: 0
-  maxHealth: 5
+  maxHealth: 4
 --- !u!4 &1964499908
 Transform:
   m_ObjectHideFlags: 0

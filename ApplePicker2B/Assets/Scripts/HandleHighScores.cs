@@ -16,10 +16,13 @@ public class HandleHighScores : MonoBehaviour
     {
         hsText = transform.GetChild(0).gameObject.GetComponent<Text>();
         hsText.text = "";
+
         playerScore = transform.GetChild(1).gameObject.GetComponent<Text>();
         playerScore.text = $"YOUR SCORE IS\n{PlayerPrefs.GetInt("PlayerScore", 0)}"
             + "\nENTER YOUR NAME:";
+
         inputName = transform.GetChild(2).gameObject.GetComponent<InputField>();
+
         SubmitButton = transform.GetChild(3).gameObject;
     }
     
@@ -28,7 +31,7 @@ public class HandleHighScores : MonoBehaviour
         if (SettingsMenu.settingsOn)
             SettingsMenu.instance.toggleDropdown();
 
-        if (inputName.text == "")
+        if (inputName.text == "")  //if no name is provided, continue waiting
         {
             return;
         }
@@ -58,7 +61,7 @@ public class HandleHighScores : MonoBehaviour
             PlayerPrefs.SetString("Name" + pos.ToString(), newName);
             pos++;
 
-            while (pos != 11)
+            while (pos != 11)  //shift all scores below the new score down
             {
                 int nextScore = PlayerPrefs.GetInt("HighScore" + pos.ToString(), (10 - pos) * 20);
                 string nextName = PlayerPrefs.GetString("Name" + pos.ToString(), "TMP");
@@ -73,7 +76,8 @@ public class HandleHighScores : MonoBehaviour
         inputName.gameObject.SetActive(false);
         SubmitButton.gameObject.SetActive(false);
 
-        string highScores = "HIGH SCORES!!\n";
+
+        string highScores = "HIGH SCORES!!\n";  //output scores
         for (int i = 1; i <= 10; i++)
         {
             highScores += i.ToString() + ")  ";

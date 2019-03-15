@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    [Header("Different Screens of Title")]
     [SerializeField]
     GameObject title;
     [SerializeField]
