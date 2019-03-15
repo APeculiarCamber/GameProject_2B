@@ -10,7 +10,7 @@ public class PointTracker : MonoBehaviour
     public bool gameOver = false;
 
     [SerializeField]
-    int maxHealth = 3;
+    int maxHealth = 4;
     int health;
 
     Text ammoText;
@@ -30,6 +30,7 @@ public class PointTracker : MonoBehaviour
         pointsText = GameObject.Find("PointsText").GetComponent<Text>();
         healthText = GameObject.Find("HealthText").GetComponent<Text>();
         gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+
         updateUI();
     }
 

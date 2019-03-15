@@ -8,12 +8,14 @@ public class Picker : MonoBehaviour
 
     AudioSource pickUpNoise;
 
+    [Header("Player Emissions")]
     [SerializeField]
     GameObject shot;
     [SerializeField]
     GameObject explosion;
 
     [Space]
+    [Header("Player Shot Speed")]
     [SerializeField]
     float shotSpeed = 0;
     float mouseXPos = 0;
@@ -64,16 +66,17 @@ public class Picker : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Drop")
+        if (other.gameObject.tag == "Drop")  //if picked up drop, gain ammo and play noise
         {
             pt.addAmmo();
             if (PlayerPrefs.GetInt("SFXMuted") == 0)
                 pickUpNoise.PlayOneShot(pickUpNoise.clip, PlayerPrefs.GetFloat("SFXVolume", 0.5f));
 
         }
-        else if (other.gameObject.tag == "EnemyShot" || other.gameObject.tag == "Enemy")
+        else if (other.gameObject.tag == "EnemyShot" || other.gameObject.tag == "Enemy")  //if enemy of shot, take damage
         {
             pt.takeHealth();
         }
